@@ -57,10 +57,15 @@ def ttt(stdscr):
         board_pos_y = min(board_pos_y,MAX_SIZE_Y-1)
 
         #build screen
-        info_bar = "X:{} Y:{} | key: {}".format(board_pos_x, board_pos_y, key)
+        info_bar_1 = "Use arrow keys + space bar | Press q to quit"
+        if first_player:
+            info_bar_2 = "X player turn"
+        else:
+            info_bar_2 = "O player turn "
 
-        #draw screen
-        stdscr.addstr(6,1,info_bar)
+            #draw screen
+        stdscr.addstr(6,1,info_bar_1)
+        stdscr.addstr(7,1,info_bar_2)
 
         stdscr.addstr(0,0,board_row)
         stdscr.addstr(1,0,board_division)
