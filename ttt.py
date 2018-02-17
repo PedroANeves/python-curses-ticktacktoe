@@ -9,6 +9,8 @@ def ttt(stdscr):
     MAX_SIZE_X = 3
     MAX_SIZE_Y = 3
 
+    board = [[' ' for x in range(MAX_SIZE_X)] for y in range(MAX_SIZE_Y)]
+
     board_pos_x = 0
     board_pos_y = 0
 
@@ -56,6 +58,18 @@ def ttt(stdscr):
         stdscr.addstr(2,0,board_row)
         stdscr.addstr(3,0,board_division)
         stdscr.addstr(4,0,board_row)
+
+        stdscr.addstr(0,0,board[0][0])
+        stdscr.addstr(0,2,board[1][0])
+        stdscr.addstr(0,4,board[2][0])
+
+        stdscr.addstr(2,0,board[0][1])
+        stdscr.addstr(2,2,board[1][1])
+        stdscr.addstr(2,4,board[2][1])
+
+        stdscr.addstr(4,0,board[0][2])
+        stdscr.addstr(4,2,board[1][2])
+        stdscr.addstr(4,4,board[2][2])
 
         #moves cursor
         screen_pos_x = board_pos_x * 2
