@@ -6,6 +6,8 @@ def ttt(stdscr):
 
     key = 0
 
+    first_player = True
+
     MAX_SIZE_X = 3
     MAX_SIZE_Y = 3
 
@@ -39,6 +41,13 @@ def ttt(stdscr):
             board_pos_y = board_pos_y + 1
         elif key == curses.KEY_UP:
             board_pos_y = board_pos_y - 1
+        elif (key == ord(' ') and board[board_pos_x][board_pos_y] == ' '):
+            if first_player:
+                board[board_pos_x][board_pos_y] = 'X'
+                first_player = False
+            else:
+                board[board_pos_x][board_pos_y] = 'O'
+                first_player = True
 
 
         #clamps board_pos_x and board_pos_y
